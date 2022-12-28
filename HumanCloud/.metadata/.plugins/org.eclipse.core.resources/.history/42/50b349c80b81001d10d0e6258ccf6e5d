@@ -1,0 +1,29 @@
+package DataStructure;
+
+public class MyStack {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		MyCustomStack cs=new MyCustomStack();
+		
+		cs.push(22);
+        cs.push(21);	
+        cs.push(13);
+        System.out.println(cs.peak());
+        System.out.println(cs.pop());
+        cs.show();
+		
+	  
+		
+		
+		
+	   
+
+		
+		
+		
+	}
+
+}

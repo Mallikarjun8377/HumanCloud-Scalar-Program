@@ -1,0 +1,13 @@
+package DataStructure;
+
+ class Node {
+		 int data;
+		Node next;
+		
+		public void Node(int data) {
+			this.data=data;
+			this.Node(data);
+	
+		}
+
+}

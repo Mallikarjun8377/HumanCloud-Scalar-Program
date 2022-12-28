@@ -1,0 +1,67 @@
+package DataStructure;
+
+public class CutomStack {
+
+	
+	private int capacity=1;
+	private static int Default_Capacity=16;
+	private int Initial_Capacity;
+	private int top=-1;
+	int stack[];
+	
+
+	
+	
+	public void CutomStack(int capacity) {
+		this.capacity=capacity;
+		this.Initial_Capacity=capacity;
+		stack=new int[this.capacity];
+		
+	}
+	public int size() {
+		return top+1;
+	}
+	public boolean isEmpty() {
+		return top==-1;
+	}
+	public void expand() {
+		capacity=capacity*2;
+		int[]newStack=new int[capacity];
+		System.arraycopy(newStack, 0, newStack, 0,size());
+		stack=newStack;
+	}
+	public void shrink() {
+		if(Initial_Capacity<=(capacity>>2)){
+			int minSize=capacity>>2;
+			if(top<minSize) {
+				capacity=capacity/2;
+				int[]newStack=new int[capacity];
+				System.arraycopy(newStack, 0, newStack, 0, size());
+				stack=newStack;
+			}
+		}
+	}
+	public void push(int data){
+		if(size()==capacity) {
+			expand();}
+		stack[top]=data;
+		}
+	
+	public int top()throws Exception{
+		if(isEmpty()) {
+			throw new Exception("Stack is empty!");
+		}
+		return stack[top];
+	}
+	public int pop()throws Exception{
+		if(isEmpty()) {
+			throw new Exception("stack is empty!");
+		}
+		int data=stack[top];
+		stack[top--]=0;
+		shrink();
+		return data;
+	}
+		
+
+}

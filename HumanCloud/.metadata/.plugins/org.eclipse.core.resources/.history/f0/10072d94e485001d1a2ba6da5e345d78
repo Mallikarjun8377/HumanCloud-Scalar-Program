@@ -1,0 +1,51 @@
+package DataStructure;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Menutrial extends MenuItem {
+	
+	private List<MenuItem> items = new ArrayList<>();
+	private static boolean continueDisplay = true;
+	private static Scanner sc = new Scanner(System.in);
+
+	public Menu() {
+		super();
+	}
+
+	public Menu(int order, String title) {
+		super(order, title);
+		addMenuItem(new MenuItem(0, "Back"));
+	}
+
+	public Menu(String title) {
+		super(0, title);
+	}
+
+	public void addMenuItem(MenuItem item) {
+		item.setParent(this);
+		items.add(item);
+	}
+
+	public List<MenuItem> getMenuItems() {
+		return items;
+	}
+
+	public void goBack() {
+		if (getParent() != null) {
+			getParent().display();
+		} else {
+			System.exit(0);
+		}
+	}
+
+	public void display() {
+		if (continueDisplay) {
+			continueDisplay = false;
+			items.forEach(e -> e.display());
+			continueDisplay = true;
+			System.out.println("Enter choice..#!");
+			int choice = sc.nextInt();
+
+}

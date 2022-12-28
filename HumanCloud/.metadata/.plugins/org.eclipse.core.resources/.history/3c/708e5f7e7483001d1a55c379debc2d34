@@ -1,0 +1,74 @@
+package DataStructure;
+
+public class Stack {
+	
+	Node head;
+    int size;
+
+	 Stack() {
+		head=null;
+		size=0;
+		
+	}
+	
+	  void push(int data) {
+		 Node temp =new Node(data);
+		 temp.next=head;
+		 size++;
+		 head=temp;
+	   
+	}
+	     int peak() {
+	    	try {if(head==null) 
+	    		System.out.println("Stack is empty");
+	    	}catch(NullPointerException e) {
+	    		return head.data;	
+	    	}
+	    	return size;
+			
+	    	 	
+	}
+	     int pop() {
+	    	try { if(head!=null) ;
+	    		 int result=head.data;
+		    	 head=head.next;
+		    	 size--;
+		    	 System.out.println("element deleted succefully");
+		    	 return result;
+		    	 }
+	    	catch(NullPointerException e){ 
+	    		System.out.println("Stack is empty");
+	    	}
+	    	return size ;
+	     }
+
+	     boolean isEmpty() {
+	    	 return head==null;
+	     }
+	     int size() {
+	    	 return size;
+	     }
+	     public  void display() {
+				Node current=head;
+			 while(current!=null) {
+				 System.out.print(" " +current.data);
+				 current=current.next;
+				 if(current==null) {
+					System.out.println("Stack is empty");
+				 }
+				
+				
+			 }
+			
+	     }
+}
+				 
+			 
+				
+		 
+	     
+	     
+     
+	
+			
+

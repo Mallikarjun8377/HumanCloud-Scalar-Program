@@ -1,0 +1,11 @@
+package DataStructure;
+
+ class Node {
+		 int data;
+		Node next;
+		
+		
+	
+		}
+
+

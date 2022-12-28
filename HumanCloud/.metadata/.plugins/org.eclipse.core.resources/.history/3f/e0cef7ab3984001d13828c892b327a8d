@@ -1,0 +1,39 @@
+package DataStructure;
+
+public class CustomStack {
+	
+	int stack[];
+	int top;
+	int capacity;
+	
+	public   CustomStack(int capacity) {
+		this.capacity=capacity;
+		int top=-1;
+		stack=new int [capacity];
+	}
+	public void push(int data) {
+		if(top!=capacity-1)
+			top++;
+		stack[top]=data;
+		
+	}
+	
+	public int pop() {
+		int result=stack[top];
+		top--;
+		return result;
+	}
+	public int peak() {
+	  return stack[top];
+	}
+            
+	public void display() {
+		for(int cs:stack) {
+			System.out.println(cs);
+			
+		}
+	}
+}
+		
+
+

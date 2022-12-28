@@ -1,0 +1,31 @@
+package DataStructure;
+
+public class MyStack {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		CustomStack n=new CustomStack(2);
+		n.push(2);
+		n.push(3);
+		n.push(4);
+		n.push(9);
+		n.push(6);
+		n.pop();
+		
+		System.out.println(n.pop());
+		
+		
+	  
+		
+		
+		
+	   
+
+		
+		
+		
+	}
+
+}

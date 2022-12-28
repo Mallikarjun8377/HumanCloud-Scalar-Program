@@ -1,0 +1,267 @@
+package DataStructure;
+
+import java.util.Scanner;
+
+public class MainMenu {
+
+	public static void main(String[] args) {
+
+		Stack stack = new Stack();
+		Queue queue = new Queue();
+		Array array = new Array();
+		LinkedList list = new LinkedList();
+
+		Scanner sc = new Scanner(System.in);
+		int choice;
+		String str;
+		do {
+			System.out.println("**DataStructure**");
+			System.out.println("1.Stack");
+			System.out.println("2.Queue");
+			System.out.println("3.Array");
+			System.out.println("4.LinkedList");
+			System.out.println("Enter your choice here");
+			choice = sc.nextInt();
+			switch (choice)
+
+			{
+			case 1:
+				int stk;
+				do {
+					System.out.println("**Stack**");
+					System.out.println("1.Push");
+					System.out.println("2.Pop");
+					System.out.println("3.Peak");
+					System.out.println("4.Display");
+					System.out.println("Enter your choice here");
+					stk = sc.nextInt();
+					switch (stk) {
+					case 1:
+						System.out.println("Enter element to Push");
+						stack.push(stk);
+						System.out.println("Element inserted succesfully!!");
+						stack.display();
+						break;
+					case 2:
+						stack.pop();
+						stack.display();
+						break;
+					case 3:
+						if(stack!=null) {
+							stack.peak();
+							System.out.println("Current element is -"+stack.peak());								
+						}
+						break;
+					case 4:
+						stack.display();
+						break;
+					default:
+						System.out.println("Wrong choice");
+					}
+					System.out.println("");
+					System.out.println("0.Back");
+					System.out.println("1.Exit");
+					str = sc.next();
+				} while (str.equalsIgnoreCase("0")); {
+				System.out.println("Thank you!!");
+			}
+				break;
+			case 2:
+				int que;
+				do {
+					System.out.println("**Queue**");
+					System.out.println("0.Back");
+					System.out.println("1.Enquue");
+					System.out.println("2.Deque");
+					System.out.println("3.Display");
+					System.out.println("Enter your choice here");
+					que = sc.nextInt();
+					switch (que) {
+					case 0:
+						System.out.println("");
+						break;
+					case 1:
+						System.out.println("Enter element to insert");
+						queue.enqueue(que);
+						System.out.println("Element inserted succesfully!!");
+			             	queue.display();
+						break;
+					case 2:
+						if (queue!=null) {
+							queue.dequeue();
+						System.out.println("");
+					}else {
+							System.out.println("Element deleted succesfully!!");
+						}
+						queue.display();
+						
+						break;
+					case 3:
+						if(queue !=null) {
+							System.out.println("Queue is empty!!");
+						}else {
+							System.out.println("Current elements in queue");
+						}
+						queue.display();
+						break;
+					default:
+						System.out.println("Wrong choice");
+					}
+					System.out.println("");
+					System.out.println("0.Back");
+					System.out.println("1.Exit");
+					str = sc.next();
+				} while (str.equalsIgnoreCase("0")); {
+				System.out.println("Thank you!!");
+			}
+				break;
+			case 3:
+				int arr;
+				do {
+					System.out.println("**Array**");
+					System.out.println("0.Back");
+					System.out.println("1.Insert");
+					System.out.println("2.InsertAtIndex");
+					System.out.println("3.DeletAtIndex");
+					System.out.println("4.Search Index");
+					System.out.println("5.Search Element");
+					System.out.println("6.Display");
+					System.out.println("Enter your choice here");
+					arr = sc.nextInt();
+					switch (arr) {
+					case 0:
+						System.out.println("");
+						break;
+					case 1:
+						System.out.println("Enter element");
+						array.insert(arr);
+						System.out.println("Element inserted succesfully!!");
+						array.display();
+						break;
+					case 2:
+						System.out.println("Enter index no");
+						int index1 = sc.nextInt();
+						System.out.println("Enter element");
+						int element1 = sc.nextInt();
+						array.insertAt(index1, element1);
+						System.out.println("Element inserted succesfully!!");
+						array.display();
+						break;
+					case 3:
+						System.out.println("Enter element");
+						array.deletAt(arr);
+						System.out.println("Element deleted succesfully!!");
+						array.display();
+						break;
+					case 4:
+						System.out.println("Enter element");
+						arr = sc.nextInt();
+						System.out.println("Index");
+         				array.searchIndex(arr);
+						break;
+					case 5:
+						System.out.println("Enter element");
+						arr = sc.nextInt();
+						System.out.println("Element");
+						array.searchElementAtIndex(arr);
+						break;
+					case 6:
+						System.out.println("Current element's in Array");
+						array.display();
+						break;
+					default:
+						System.out.println("Wrong choice");
+					}
+					System.out.println("");
+					System.out.println("0.Back");
+					System.out.println("1.Exit");
+					str = sc.next();
+				} while (str.equalsIgnoreCase("0")); {
+				System.out.println("Thank you!!");
+			}
+				break;
+			case 4:
+				int LinkL;
+				do {
+					System.out.println("**LinkedList**");
+					System.out.println("0.Back");
+					System.out.println("1.Insert At");
+					System.out.println("2.Delet At");
+					System.out.println("3.InsertAtEnd");
+					System.out.println("4.DeletAtEnd");
+					System.out.println("5.InsertAtStart");
+					System.out.println("6.DeletAtStart");
+					System.out.println("7.Display");
+					System.out.println("Enter your choice here");
+					LinkL = sc.nextInt();
+					switch (LinkL) {
+					case 0:
+						System.out.println("");
+						break;
+					case 1:
+						System.out.println("Enter index no");
+						int index1 = sc.nextInt();
+						System.out.println("Enter element");
+						int element1 = sc.nextInt();
+						list.insertAt(index1, element1);
+						System.out.println("Element inserted succesfully!!");
+						list.display();
+						break;
+					case 2:
+						list.deletAt(LinkL);
+						System.out.println("Element deleted succesfully!!");
+						list.display();
+						break;
+					case 3:
+						System.out.println("Enter element");
+						LinkL = sc.nextInt();
+						list.insertAtEnd(LinkL);
+						System.out.println("Element inserted succesfully!!");
+						list.display();
+						break;
+					case 4:
+						list.deletAtEnd();
+						System.out.println("Element deleted succesfully!!");
+						list.display();
+						break;
+					case 5:
+						System.out.println("Enter element");
+						LinkL = sc.nextInt();
+						list.insertAtStart(LinkL);
+						System.out.println("Element inserted succesfully!!");
+						list.display();
+						break;
+					case 6:
+						list.deletAtStart();
+						System.out.println("Element deleted succesfully!!");
+						list.display();
+						break;
+					case 7:
+						System.out.println("Current element's in LinkedList");
+						list.display();
+					default:
+						System.out.println("Wrong choice");
+						break;
+					}
+					System.out.println("");
+					System.out.println("0.Back");
+					System.out.println("1.Exit");
+					str = sc.next();
+				} while (str.equalsIgnoreCase("0")); {
+				System.out.println("Thank you!!");
+			}
+
+			default:
+				System.out.println("Wrong choice");
+				break;
+			}
+			System.out.println("Do you want to use dataStructure? y/n");
+			str = sc.next();
+
+		} while (str.equalsIgnoreCase("y"));
+		{
+			System.out.println("Thank you!!");
+		}
+	}
+
+}

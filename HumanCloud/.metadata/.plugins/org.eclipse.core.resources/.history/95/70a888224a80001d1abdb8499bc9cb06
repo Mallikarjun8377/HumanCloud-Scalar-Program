@@ -1,0 +1,40 @@
+package DataStructure;
+
+public class NewStack {
+	
+	int a[];
+	int up;
+	int capacity;
+	
+	public NewStack(int capacity) {
+		this.capacity=capacity;
+		up=-1;
+		a=new int[capacity];
+	}
+	
+	void push(int data) {
+		if(up==capacity-1) {
+			System.out.println("Stack memory is full");}
+		else {
+		up++;
+		a[up]=data;}}
+	
+	int pop(){
+		if(up==capacity-1);
+		int res= a[up];
+		up--;
+		return res;}
+	
+	
+	int peak() {
+		if(up==-1) {
+			System.out.println("No Element here");}
+		int res=a[up];
+		return res;}
+		
+	
+	public void show(){
+		for(int n: a ) {
+			System.out.print(n+" ");
+		}
+}}

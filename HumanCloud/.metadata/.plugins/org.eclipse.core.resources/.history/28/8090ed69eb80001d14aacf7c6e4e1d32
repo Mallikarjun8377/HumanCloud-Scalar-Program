@@ -1,0 +1,13 @@
+package DataStructure;
+
+public class CutomStack {
+
+	
+	int capacity=1;
+	int stack[]=new int[capacity];
+	int temp=0;
+	
+	public void push(int data) {
+		
+	}
+}

@@ -1,0 +1,97 @@
+package DataStructure;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Menu extends MenuItem {
+		
+		private List<MenuItem> items = new ArrayList<>();
+		private static boolean continueDisplay = true;
+		private static Scanner sc = new Scanner(System.in);
+
+		public Menu() {
+			super();
+		}
+
+		public Menu(int order, String title) {
+			super(order, title);
+			addMenuItem(new MenuItem(0, "Back"));
+		}
+
+		public Menu(String title) {
+			super(0, title);
+		}
+
+		public void addMenuItem(MenuItem item) {
+			item.setParent(this);
+			items.add(item);;
+		}
+	
+
+		public List<MenuItem> getMenuItems() {
+			return items;
+		}
+
+		public void goBack() {
+			if (getParent() != null) {
+				getParent().display();
+			} else {
+				System.exit(0);
+			}
+		}
+
+		public void display() {
+			if (continueDisplay) {
+				continueDisplay = false;
+			for(MenuItem item:items) {
+				item.display();
+			}
+				continueDisplay = true;
+				System.out.println("Enter choice..#!");
+				int choice = sc.nextInt();
+				switch(choice) {
+				
+				case 1:
+					System.out.println(getParent());
+					stackOperations();
+					back();
+					break;
+				case 2:
+					queueOperations();
+					break;
+				case 3:
+					arrayOperaions();
+				case 4:
+					linkedListOperations();
+					break;
+				}
+				
+}
+			else {
+				super.display();
+			}
+		}
+
+		private void linkedListOperations() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		private void arrayOperaions() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		private void queueOperations() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		private void stackOperations() {
+			// TODO Auto-generated method stub
+			
+		}
+	}
+
+	

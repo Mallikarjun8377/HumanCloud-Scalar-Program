@@ -1,0 +1,54 @@
+package DataStructure;
+
+import DataStructure.LinkedList.Node;
+
+public class MyLL {
+	
+	Node head;
+
+	static class Node{
+		int data;
+		Node next;
+		
+		Node(int data){
+			this.data=data;
+			next=null;
+		}
+		
+	}
+	
+	public static  MyLL insert(MyLL list,int data) {
+		Node newNode=new Node(data);
+		if(list.head==null) {
+			list.head=newNode;
+		}else {
+			Node last=list.head;
+			
+			while(last.next!=null) {
+				last=last.next;
+			}
+			last.next=newNode;
+		}
+		return list;
+   	}
+			
+	 public static void print(MyLL list) {
+			Node currentNode=list.head;
+//			System.out.println("LinkedList(list)");
+			
+			while(currentNode!=null) {
+				System.out.println(currentNode.data);
+				currentNode=currentNode.next;
+		}
+		
+		
+	}
+			
+			
+			
+			
+			
+		
+	
+
+}

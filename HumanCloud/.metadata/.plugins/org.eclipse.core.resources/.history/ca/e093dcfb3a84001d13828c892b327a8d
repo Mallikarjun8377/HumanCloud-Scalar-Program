@@ -1,0 +1,44 @@
+package DataStructure;
+
+public class CustomStack {
+	
+	int stack[];
+	int top=-1;
+	int capacity;
+	
+	public   CustomStack(int capacity) {
+		this.capacity=capacity;
+		stack=new int [capacity];
+	}
+	public void push(int data) {
+		if(top!=capacity-1)
+			top++;
+		stack[top]=data;
+		
+	}
+	
+	public int pop() {
+		try{if(top!=capacity) {int result=stack[top];
+		top--;
+		return result;
+		}}catch(NullPointerException e){
+			System.out.println(e.getMessage());
+		}
+		return capacity;
+		
+		
+	}
+	public int peak() {
+	  return stack[top];
+	}
+            
+	public void display() {
+		for(int cs:stack) {
+			System.out.println(cs);
+			
+		}
+	}
+}
+		
+
+

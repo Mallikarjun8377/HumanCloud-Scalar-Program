@@ -1,0 +1,106 @@
+package DataStructure;
+
+public class LinkedList {
+	
+	Node head;
+	int data;
+	
+    public LinkedList() {
+		this.data=data;
+	}
+
+		
+		public void insertAtEnd(int data) {
+			Node node=new Node(data);
+			node.data=data;
+			node.next=null;
+			
+			if(head==null) {
+				head=node;
+				System.out.println("Element inserted succesfully!!");
+			}else {
+				Node temp=head;
+				while(temp.next!=null)
+				{
+					temp=temp.next;
+				}
+				temp.next=node;
+			}
+		}
+		public void insertAtStart(int data) {
+			Node node=new Node(data);
+			node.data=data;
+			node.next=null;
+			node.next=head;
+			head=node;
+			System.out.println("Element inserted succesfully!!");
+		}
+		public void insertAt(int index, int data) {
+			Node node=new Node(data);
+			node.data=data;
+			node.next=null;
+			
+			if(index==0) {
+				insertAtStart(data);
+				System.out.println("Element inserted succesfully!!");
+			}else {
+				Node temp=head;
+				for(int i=0;i<index-1;i++) {
+					temp=temp.next;
+				}
+				node.next=temp.next;
+				temp.next=node;
+			}
+		}
+		public void deletAt(int index) {
+			try {
+				if(index==0) {
+					head=head.next;
+					
+				}else {
+					Node temp=head;
+				    Node temp1=null;
+				    for(int i=0; i<index-1;i++) {
+				    	temp=temp.next;
+				    }temp1=temp.next;
+				    temp.next=temp1.next;
+				    temp1=null;
+				    System.out.println("Element deleted succesfully!!");
+				    }
+				}catch(ArrayIndexOutOfBoundsException e) {
+					System.out.println("Array is empty");
+			}
+		}
+		public void deletAtStart() {
+			Node node=new Node(data);
+			node.next=null;
+			Node temp=head;
+			temp=temp.next;
+			head=temp;
+			System.out.println("Element deleted succesfully!!");
+		}
+		public void deletAtEnd() {
+			Node node=new Node(data);
+			node.next=null;
+			Node temp=head;
+			Node ptr=temp.next;
+			while(ptr.next!=null) {
+				temp=ptr;
+				ptr=ptr.next;
+			}
+			temp.next=null;
+			System.out.println("Element deleted succesfully!!");
+		}
+		public void display() {
+			Node node=head;
+			if(node==null) {
+				System.out.println("!!Stack is empty!!");}
+			while(node.next!=null){
+			 System.out.println("!!Your updated stack!!");
+				System.out.println(node.data);
+			node=node.next;
+		}
+		System.out.println(node.data);
+		}
+}
+	

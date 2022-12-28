@@ -1,0 +1,42 @@
+package DataStructure;
+
+public class CustomeQueue {
+	
+	Node front,rear;
+	int size;
+		
+	
+
+	void enqueue(int data){
+		Node newNode=new Node(data);
+		if(front==null) {
+			front=rear=newNode;
+	}
+		rear.next=newNode;
+		rear=newNode;
+	}
+	
+	 int dequeue() {
+		try{if(front==null) {}
+		int result=front.data;
+		front=front.next;
+		return result;
+		}catch(NullPointerException e) {
+			System.out.println("Queue is empty");
+		}
+		return size;
+		
+		}
+	 
+	  public  void display() {
+		 Node current=front;
+		 while(current!=null) {
+	    System.out.println(" " +current.data);
+		 current=current.next;
+		 }
+	  }
+	}
+		 
+	 
+
+

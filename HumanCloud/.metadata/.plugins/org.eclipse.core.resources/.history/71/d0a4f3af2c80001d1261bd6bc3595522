@@ -1,0 +1,55 @@
+package DataStructure;
+
+public class LinkedList {
+	
+	Node head;
+
+	static class Node {
+		int data;
+		Node next;
+		
+		Node(int data){
+			this.data=data;
+			next=null;}}
+	
+	public LinkedList insert(LinkedList list, int data) {
+		Node newnode=new Node(data);
+		if(list.head==null) {
+		list.head=newnode;
+	}else {
+		Node last=list.head;
+	 while(last.next!=null) {
+		 last=last.next;
+	 }
+          last.next=newnode;	 
+	}
+				return list;
+	}
+	
+	
+	static void print(LinkedList list) {
+		Node currentNode=list.head;
+		System.out.println("LinkedList(list)");
+		
+		while(currentNode!=null) {
+			System.out.println(currentNode.data);
+			currentNode=currentNode.next;		
+		
+		
+		
+	
+	
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+
+}}
+
+
+	

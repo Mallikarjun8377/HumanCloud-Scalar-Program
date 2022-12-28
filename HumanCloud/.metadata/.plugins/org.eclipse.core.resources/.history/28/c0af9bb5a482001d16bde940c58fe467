@@ -1,0 +1,106 @@
+package DataStructure;
+
+public final class Array {
+	
+	
+	private int arr[];
+	private int count;
+	private int size;
+	
+	private  Array(int data) {
+		this.size=1;
+		this.count=0;
+		this.arr=new int [size];
+	}
+	public static Array getInstance() {
+		return arrayInstance;
+	}
+	
+	public void insert(int data) {
+		expand();
+		 arr[count]=data;
+		 count++;
+		 
+	}
+	
+	private void expand() {
+		if(this.size==this.count) {
+			int tempArr[]=new int[size+1];
+			for(int i=0;i<arr.length;i++) {
+		     tempArr[i]=arr[i];
+			}
+			arr=tempArr;
+			size=size+1;			
+		}
+	}
+	public void insertAt(int index,int data) {
+		    try{
+			for(int i=arr.length-1;i<index;i++){
+			arr[i+1]=arr[i];	
+		}	
+    	    arr[index]=data;
+		     count++;
+	    }catch(ArrayIndexOutOfBoundsException e) {
+	    	System.out.println("Index should be less than capacity"+""+size);
+	    }
+	}
+	public void deletAt(int index) {
+		if(index>=size) {
+			System.out.println("Index should be less than capacity"+" "+size);
+		}else {
+			for(int i=index;i<arr.length-1;i++) {    
+		     arr[i]=arr[i+1];
+		}
+		  shrink();
+		}
+	}
+	private void shrink() {
+			int tempArr[]=new int[size-1];
+			for(int i=0;i<arr.length-1;i++) {
+		     tempArr[i]=arr[i];
+			}
+			arr=tempArr;
+			size--;
+		}
+	public void searchIndex(int data) {
+		int temp=0;
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]==data) {
+				System.out.println(i);
+				temp=temp+1;
+			}
+		}
+		if(temp>0) {
+			System.out.print("Element is present in array");
+		}else {
+			System.out.println("Element is not present in array");
+		}
+	}
+	public void searchElementAtIndex(int index) {
+		int element=0;
+		int count=0;
+		if(count>0) {for(int i=0;i<arr.length;i++) {
+			   if(i==index) {
+				  element=arr[i];
+				  count++;
+			   }    
+			}
+				System.out.println(element);
+			}else {
+				System.out.println("Invalid input");
+			}
+		}
+	
+	public void size() {
+		System.out.println(arr.length);
+	}
+	public void display() {
+		for(int ca:arr) {
+			System.out.print(ca+" ");
+		}
+		System.out.println("");		
+	}
+}
+
+
+

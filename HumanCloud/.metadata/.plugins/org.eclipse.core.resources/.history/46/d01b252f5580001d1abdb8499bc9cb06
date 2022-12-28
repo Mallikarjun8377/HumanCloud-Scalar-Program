@@ -1,0 +1,21 @@
+package DataStructure;
+
+
+public class CustomStack {
+	
+	int capacity=1;
+	int stack[]=new int[capacity];
+	int size;
+	
+	public void push(int data) {
+		if(size==capacity);
+		Expand();
+	}
+
+
+	private void Expand() {
+		int lengh=size;
+		
+	}
+
+}

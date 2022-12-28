@@ -1,0 +1,16 @@
+package DataStructure;
+
+import java.util.Scanner;
+
+public class MenuSwitch extends MenuItem {
+
+	@Override
+	public void display() {
+		super.display();
+	}
+	
+	
+	
+
+
+}

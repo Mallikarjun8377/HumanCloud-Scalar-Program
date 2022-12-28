@@ -1,0 +1,54 @@
+package DataStructure;
+
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+public class CustomStack {
+	
+	int stack[];
+	int top=-1;
+	int capacity;
+	int size;
+	
+	public   CustomStack(int capacity) {
+		this.capacity=capacity;
+		stack=new int [capacity];
+	}
+	public void push(int data) {
+		if(top!=capacity-1)
+			top++;
+		stack[top]=data;
+		
+	}
+	
+	public int pop() {
+		try{if(top!=-1) {int result=stack[top];
+		top--;
+		return result;
+		}}catch(NullPointerException e){
+			System.out.println(e.getMessage());
+		}
+		return capacity;
+		
+		
+	}
+	public int peak() {
+	   try{if(top!=-1){
+		   return stack[top];
+	   }}catch(NullPointerException e) {
+		   System.out.println(e.getMessage());
+	   }
+	 return capacity;
+	}
+            
+	public void display() {
+		for(int cs:stack) {
+			System.out.println(cs);
+			
+		}
+		
+		}
+	}
+
+		
+
+

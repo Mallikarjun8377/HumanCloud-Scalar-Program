@@ -1,0 +1,36 @@
+package DataStructure;
+
+public class MyStack {
+	
+	
+	public static void main(String[] args) {
+		
+		
+		NewStack n=new NewStack(10);
+	    n.push(2);
+		n.push(7);
+		n.push(4);
+		n.push(8);
+		n.push(10);
+		n.push(6);
+		n.push(3);
+		n.push(9);
+		n.push(12);
+		n.pop();
+		n.push(44);
+	
+
+		
+		System.out.println(n.capacity);		
+		System.out.println(n.pop());
+		System.out.println(n.peak());	
+		n.show();
+	   
+	
+	
+		
+		
+		
+	}
+
+}

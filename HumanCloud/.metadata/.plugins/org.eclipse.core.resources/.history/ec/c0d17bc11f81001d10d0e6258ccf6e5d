@@ -1,0 +1,7 @@
+package DataStructure;
+
+import DataStructure.NewLinkedList.Node;
+
+public class CustomeLinkedList {
+	
+	

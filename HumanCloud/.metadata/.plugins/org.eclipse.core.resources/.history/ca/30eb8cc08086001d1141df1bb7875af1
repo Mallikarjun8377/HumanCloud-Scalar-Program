@@ -1,0 +1,19 @@
+package DataStructure;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Menumenu extends MenuItem{
+	
+	List<MenuItem> items=new ArrayList<>();
+	Scanner sc=new Scanner(System.in);
+	
+
+	public Menumenu (int order, String title){
+		this.title=title;
+		
+	}
+	
+
+}

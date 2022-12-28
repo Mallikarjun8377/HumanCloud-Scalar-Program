@@ -1,0 +1,29 @@
+package DataStructure;
+
+public class CustomQueue {
+
+	int que[];
+	int capacity;
+	int front=-1;
+	
+	public CustomQueue() {
+		this.capacity=capacity;
+		que=new int[capacity];
+	}
+
+	public void enqueue(int data) {
+		front++;
+		 que[front]=data;
+		 
+	}
+	public int dequeue() {
+		int result=que[rear];
+		rear--;
+		return result;
+	}
+	public void display() {
+		for(int cq:que) {
+			System.out.println(cq);
+		}
+	}
+}

@@ -1,0 +1,11 @@
+package DataStructure;
+
+public class MenuSwitch {
+	
+	public static final Stack stack = new Stack();
+	public static final Queue queue = new Queue();
+	public static final Array array = new Array();
+	public static final LinkedList list = new LinkedList();
+	
+
+}
